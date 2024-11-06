@@ -316,6 +316,10 @@ paths:
         category: repos
         subcategory: repos
 components:
+  securitySchemes:
+    accessToken:
+      type: http
+      scheme: bearer
   parameters:
     org:
       name: org
