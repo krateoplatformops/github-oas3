@@ -203,6 +203,10 @@ paths:
         description: API method documentation
         url: https://docs.github.com/rest/meta/meta#github-api-root
 components:
+  securitySchemes:
+    accessToken:
+      type: http
+      scheme: bearer
   parameters:
     username:
           name: username
