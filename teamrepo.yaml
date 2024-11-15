@@ -19,9 +19,9 @@ externalDocs:
   url: https://docs.github.com/rest/
 paths:
   /teamrepository/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}:
-    servers:
-      - url: http://github-plugin-krateo.krateo-system.svc.cluster.local:8080
     get:
+      servers:
+      - url: http://github-plugin-krateo.krateo-system.svc.cluster.local:8080
       summary: Get the permission of a team in a repository
       description: Get the permission of a team in a repository
       operationId: get-team-repo-permission
