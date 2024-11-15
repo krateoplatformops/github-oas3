@@ -17,7 +17,47 @@ servers:
 externalDocs:
   description: GitHub v3 REST API
   url: https://docs.github.com/rest/
-paths: 
+paths:
+  /teamrepository/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}:
+    servers:
+      - url: http://github-plugin-krateo.krateo-system.svc.cluster.local:8080
+    get:
+      summary: Get the permission of a team in a repository
+      description: Get the permission of a team in a repository
+      operationId: get-team-repo-permission
+      parameters:
+        - name: org
+          in: path
+          description: Organization of the repository
+          required: true
+          schema:
+            type: string
+        - name: team_slug
+          in: path
+          description: Slug of the team
+          required: true
+          schema:
+            type: string
+        - name: owner
+          in: path
+          description: Owner of the repository
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          description: Name of the repository
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
   "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}":
     get:
       summary: Check team permissions for a repository
